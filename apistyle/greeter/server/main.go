@@ -12,7 +12,7 @@ import (
 
 // 1. 定义一个 server 结构体
 type server struct {
-	pb.UnimplementGreeterServer
+	pb.UnimplementedGreeterServer
 }
 
 // 2. 为 server 结构体添加 SayHello 方法，

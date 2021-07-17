@@ -33,7 +33,7 @@ func main() {
 		name = os.Args[1]
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background, time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
 	// 4. 通过 c.SayHello 这种本地式调用方式，调用远端的 SayHello 接口
