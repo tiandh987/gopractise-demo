@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+// option 关键字用来对 .proto 文件进行一些设置
+// 其中 go_package 是必须的设置，而且 go_package 的值必须是包导入的路径
+option go_package = "github.com/tiandh987/gopractise-demo/apistyle/greeter/helloworld";
+
+// package 关键字指定生成的 .pb.go 文件所在的包名
+package helloworld;
+
+// 通过 service 关键字，定义服务，然后再指定该服务拥有的 RPC 方法
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// 通过 message 关键字，定义方法的请求结构体类型
+message HelloRequest {
+  string name = 1;
+}
+
+// 通过 message 关键字，定义方法的返回结构体类型 
+message HelloReply {
+  string message = 1;
+}
